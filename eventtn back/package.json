@@ -1,0 +1,37 @@
+{
+  "name": "eventtn-backend",
+  "version": "1.0.0",
+  "description": "EventTN - Event Management Platform Backend",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "prisma:generate": "dotenv -e .env -- prisma generate --schema=src/prisma/schema.prisma",
+    "prisma:migrate": "dotenv -e .env -- prisma migrate dev --schema=src/prisma/schema.prisma",
+    "prisma:deploy": "dotenv -e .env -- prisma migrate deploy --schema=src/prisma/schema.prisma",
+    "prisma:studio": "dotenv -e .env -- prisma studio --schema=src/prisma/schema.prisma",
+    "seed": "dotenv -e .env -- node src/prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.20.0",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "streamifier": "^0.1.1"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.4.2",
+    "nodemon": "^3.1.7",
+    "prisma": "^5.20.0"
+  },
+  "prisma": {
+    "seed": "node src/prisma/seed.js"
+  }
+}
