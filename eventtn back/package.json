@@ -4,7 +4,7 @@
   "description": "EventTN - Event Management Platform Backend",
   "main": "src/server.js",
   "scripts": {
-    "build": "prisma generate --schema=src/prisma/schema.prisma",
+    "build": "prisma generate --schema=src/prisma/schema.prisma && prisma migrate deploy --schema=src/prisma/schema.prisma",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "prisma:generate": "dotenv -e .env -- prisma generate --schema=src/prisma/schema.prisma",
